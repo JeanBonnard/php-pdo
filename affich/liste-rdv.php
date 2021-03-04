@@ -1,7 +1,7 @@
 <?php
 
 require_once 'connection.php';
-require_once 'main.css';
+
 if (isset($_GET['message'])){
     echo "<div style='background-color: green; padding: 10px; color: white;'>".$_GET['message']."</div>";
 }

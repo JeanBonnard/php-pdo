@@ -2,7 +2,7 @@
 session_start();
 
 require_once 'connection.php';
-require_once 'main.css';
+
 
 if (isset($_GET['message'])){
     echo '<div style="padding: 10px; background-color: green; color: #ffffff;">' .$_GET['message'].'</div>';
@@ -26,8 +26,8 @@ if (isset($_GET['message'])){
         </thead>
         <tbody>';
 
-     $selectStatement = $bdd->prepare("SELECT * FROM `patients` WHERE `lastname`=? AND `firstname`=?");
-     $selectStatement->execute([$_POST['nom'],$_POST['prenom']]);
+     $selectStatement = $bdd->prepare("SELECT * FROM `patients` WHERE `lastname` LIKE ? OR `firstname` LIKE ?");
+     $selectStatement->execute([$_POST['nom'].'%',$_POST['prenom'].'%']);
      $profil = $selectStatement->fetch();
 
          echo "<tr>";

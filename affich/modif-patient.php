@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once 'main.css';
+
 
 $dsn = 'mysql:dbname=hospitalE2N;host=127.0.0.1';
 $user = 'jean';
