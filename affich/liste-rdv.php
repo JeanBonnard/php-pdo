@@ -1,7 +1,7 @@
 <?php
 
 require_once 'connection.php';
-
+require_once 'main.css';
 if (isset($_GET['message'])){
     echo "<div style='background-color: green; padding: 10px; color: white;'>".$_GET['message']."</div>";
 }
@@ -40,4 +40,4 @@ if (isset($_GET['message'])){
 
     </tbody>
 </table>
-<a href="profil-patient.php"><button>créer un rdv</button></a><br>
+<a href="profil-patient.php"><button type="button" class="btn btn-success">créer un rdv</button></a><br>

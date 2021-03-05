@@ -110,8 +110,8 @@ $premier = ($currentPage * $parPage) - $parPage;
         </li>
     </ul>
 </nav>
+<br>
 
-
-<a href="profil-patient.php"><button>profil patient</button></a>
-<a href="ajout-patient.php"><button>ajouter un nouveau patient</button></a>
+<a href="profil-patient.php"><button type="button" class="btn btn-success">profil patient</button></a><br>
+<a href="ajout-patient.php"><button type="button" class="btn btn-success">ajouter un nouveau patient</button></a>
 </html>

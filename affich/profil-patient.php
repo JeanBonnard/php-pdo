@@ -4,6 +4,7 @@ session_start();
 require_once 'connection.php';
 
 
+
 if (isset($_GET['message'])){
     echo '<div style="padding: 10px; background-color: green; color: #ffffff;">' .$_GET['message'].'</div>';
 }
@@ -12,7 +13,7 @@ if (isset($_GET['message'])){
 //$nom = $_POST['nom'];
 
  if (isset($_POST['prenom']) && !empty($_POST['prenom']) || isset($_POST['nom']) && !empty($_POST['nom'])){
-
+     require_once 'main.css';
      echo '<h1>PATIENT</h1><br><table border="1">
         <thead>
         <tr>
@@ -89,9 +90,10 @@ if (isset($_GET['message'])){
     <label for="nom">nom</label>
     <input type="text" name="nom">
 
-    <button>rechercher</button>
+    <button type="button" class="btn btn-success">rechercher</button>
 
-</form>';
+</form>
+</html>';
  }
 
 ?>
