@@ -11,7 +11,7 @@ if (isset($_GET['message'])){
 //$prenom = $_POST['prenom'];
 //$nom = $_POST['nom'];
 
- if (isset($_POST['prenom']) && !empty($_POST['prenom'])){
+ if (isset($_POST['prenom']) && !empty($_POST['prenom']) || isset($_POST['nom']) && !empty($_POST['nom'])){
 
      echo '<h1>PATIENT</h1><br><table border="1">
         <thead>
