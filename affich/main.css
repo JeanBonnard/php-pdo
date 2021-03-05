@@ -1,0 +1,36 @@
+body{
+background-color: lightgray;
+}
+table{
+    margin: auto;
+    border-radius: 25px;
+    border: solid 10px green;
+    border-collapse: initial !important;
+}
+.pagination{
+    margin: auto;
+}
+nav{
+    display: flex;
+}
+a{
+    display: flex;
+}
+button{
+    margin: auto;
+}
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: green;
+    border-color: green;
+}
+.page-link {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: green;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
