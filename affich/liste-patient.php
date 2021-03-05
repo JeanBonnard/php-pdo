@@ -46,6 +46,7 @@ $pages = ceil($nbPatient / $parPage);
 $premier = ($currentPage * $parPage) - $parPage;
 
 ?>
+<h1>LISTES PATIENTS</h1><br>
 <table border="1" style="text-align: center;">
     <thead>
     <tr>
@@ -91,7 +92,8 @@ $premier = ($currentPage * $parPage) - $parPage;
 
     </tbody>
 </table><br>
-
+<button class="btn btn-success"><a href="profil-patient.php">profil patient</a></button><br><br>
+<button class="btn btn-success"><a href="ajout-patient.php">ajouter un nouveau patient</a></button><br><br>
 <nav>
     <ul class="pagination">
         <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
@@ -112,6 +114,5 @@ $premier = ($currentPage * $parPage) - $parPage;
 </nav>
 <br>
 
-<a href="profil-patient.php"><button type="button" class="btn btn-success">profil patient</button></a><br>
-<a href="ajout-patient.php"><button type="button" class="btn btn-success">ajouter un nouveau patient</button></a>
+
 </html>

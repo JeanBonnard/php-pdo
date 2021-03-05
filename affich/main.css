@@ -1,5 +1,6 @@
 body{
 background-color: lightgray;
+    text-align: center !important;
 }
 table{
     margin: auto;
@@ -15,6 +16,12 @@ nav{
 }
 a{
     display: flex;
+    color: white;
+    margin: auto;
+}
+a:hover {
+    color: white;
+    text-decoration: underline;
 }
 button{
     margin: auto;

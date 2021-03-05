@@ -3,7 +3,7 @@
 session_start();
 
 require_once 'connection.php';
-
+require_once 'header.php';
 
 $selectStatement = $bdd->prepare("SELECT * FROM `appointments` WHERE `id`=?");
 $selectStatement->execute([$_GET['id']]);
@@ -18,7 +18,7 @@ $heur = $dateTime[1];
 if (isset($_GET['message'])){
     echo "<div style='padding: 10px; background-color: green; color: white'>".$_GET['message']."</div>";
 }
-require_once 'main.css'
+require_once 'header.php'
 ?>
 
 <body>
@@ -38,7 +38,7 @@ require_once 'main.css'
         </div>
 
     </div>
-    <button type="button" class="btn btn-success">confirmer</button>
+    <button type="submit" class="btn btn-success">confirmer</button>
 </form>
 
 </body>

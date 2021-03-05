@@ -1,7 +1,7 @@
 <?php
 
 require_once 'connection.php';
-require_once 'main.css';
+require_once 'header.php';
 if (isset($_GET['message'])){
     echo "<div style='background-color: green; padding: 10px; color: white;'>".$_GET['message']."</div>";
 }
@@ -32,12 +32,13 @@ if (isset($_GET['message'])){
         echo "<td>".$date. "</td>";
         echo "<td>".$heur . "</td>";
         echo '<td><a href="sup-rdv.php?id='.$patient['id'].'">❌</a></td>';
-        echo '<td><a href="modif-rdv.php?id='.$patient['id'].'">Modif</a></td>';
+        echo '<td><a href="modif-rdv.php?id='.$patient['id'].'">✏</a></td>';
         echo "</tr>";
-        var_dump($patient['id']);
+        //var_dump($patient['id']);
     }
     ?>
 
     </tbody>
-</table>
+</table><br>
 <a href="profil-patient.php"><button type="button" class="btn btn-success">créer un rdv</button></a><br>
+<a href="liste-patient.php"><button type="button" class="btn btn-success">retour liste patients</button></a><br>

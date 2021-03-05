@@ -7,7 +7,7 @@ $password = 'root';
 try {
     $bdd = new PDO($dsn, $user, $password);
     $bdd->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    echo 'tu as réussi ';
+    echo 'connection bdd OK ';
 } catch (PDOException $e) {
     echo 'Connexion échouée : ' . $e->getMessage();
 }

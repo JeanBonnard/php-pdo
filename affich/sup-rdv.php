@@ -2,7 +2,7 @@
 require_once 'connection.php';
 
 try {
-    $result = $bdd-> prepare('DELETE FROM `appointments` WHERE `appointments`.idPatients = ?');
+    $result = $bdd-> prepare('DELETE FROM `appointments` WHERE `appointments`.id = ?');
     $result->execute(array($_GET['id']));
 
     echo 'tu as reussi';

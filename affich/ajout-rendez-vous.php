@@ -1,8 +1,8 @@
 <?php
 if (isset($_GET['message'])){
-    echo $_GET['message'];
+    echo "<div style='background-color: green; padding: 10px; color: white;'>".$_GET['message']."</div>";
 }
- require_once 'main.css';
+ require_once 'header.php';
 ?>
 
 
@@ -22,9 +22,9 @@ if (isset($_GET['message'])){
             <label for="date">heure</label>
         </div>
 
-    </div>
-    <button type="button" class="btn btn-success">confirmer</button>
-</form>
-<a href="liste-rdv.php">afficher la liste des rdv</a>
+    </div><br>
+    <button type="submit" class="btn btn-success">confirmer</button> <br>
+</form><br>
+<button class="btn btn-success"><a href="liste-rdv.php">afficher la liste des rdv</a></button>
 </body>
 </html>

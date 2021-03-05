@@ -12,8 +12,9 @@ if (isset($_GET['message'])){
 //$prenom = $_POST['prenom'];
 //$nom = $_POST['nom'];
 
- if (isset($_POST['prenom']) && !empty($_POST['prenom']) || isset($_POST['nom']) && !empty($_POST['nom'])){
-     require_once 'main.css';
+ if (isset($_POST['prenom']) && !empty($_POST['prenom']) ){
+     /*|| isset($_POST['nom']) && !empty($_POST['nom'])*/
+     require_once 'header.php';
      echo '<h1>PATIENT</h1><br><table border="1">
         <thead>
         <tr>
@@ -22,21 +23,26 @@ if (isset($_GET['message'])){
             <th>mail</th>
             <th>date de naissance</th>
             <th>phone</th>
+            <th>id</th>
 
         </tr>
         </thead>
         <tbody>';
 
-     $selectStatement = $bdd->prepare("SELECT * FROM `patients` WHERE `lastname` LIKE ? OR `firstname` LIKE ?");
-     $selectStatement->execute([$_POST['nom'].'%',$_POST['prenom'].'%']);
-     $profil = $selectStatement->fetch();
 
+     $selectStatement1 = $bdd->prepare("SELECT * FROM patients WHERE lastname LIKE ? OR firstname LIKE ?");
+     $selectStatement1->execute([
+         $_POST['prenom'].'%',
+         $_POST['prenom'].'%'
+     ]);
+     $profil = $selectStatement1->fetch();
          echo "<tr>";
          echo "<td>".$profil['lastname'] . "</td>";
          echo "<td>".$profil['firstname'] . "</td>";
          echo "<td>".$profil['mail'] . "</td>";
          echo "<td>".$profil['birthdate'] . "</td>";
-         echo "<td>".$profil['phone'] . "</td>";
+     echo "<td>".$profil['phone'] . "</td>";
+     echo "<td>".$profil['id'] . "</td>";
          echo "</tr>";
 
      echo'</tbody>
@@ -76,23 +82,26 @@ if (isset($_GET['message'])){
            ?>
         </tbody>
         </table><br>
-        <a href="modif-patient.php?id=<?=$profil["id"]?>"><button>Modifier le profil patient</button></a><br>
-        <a href="ajout-rendez-vous.php?id=<?=$profil["id"]?>"><button>prendre rdv pour ce patient</button></a>
+        <button class="btn btn-success"><a href="modif-patient.php?id=<?=$profil["id"]?>">Modifier le profil patient</a></button><br><br>
+     <button class="btn btn-success"><a href="ajout-rendez-vous.php?id=<?=$profil["id"]?>">prendre rdv pour ce patient</a></button>
 <?php
  } else{
-
+require_once 'header.php';
      echo '<h1>Rechercher un patient</h1>
 
 <form action="profil-patient.php" method="post">
     <label for="prenom">prénom</label>
     <input type="text" name="prenom">
 
+<!--
     <label for="nom">nom</label>
     <input type="text" name="nom">
+-->
 
-    <button type="button" class="btn btn-success">rechercher</button>
+    <button type="submit" class="btn btn-success">rechercher</button>
 
 </form>
+</body>
 </html>';
  }
 
